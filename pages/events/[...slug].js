@@ -7,7 +7,10 @@ const FilteredEvents = () => {
     <div>
       Filtered events listing page
       <br />
-      All events from: {router.query.slug.map((item) => `${item}/`)}
+      All events from:{" "}
+      {router.query &&
+        router.query.slug &&
+        router.query.slug.map((item) => `${item}/`)}
     </div>
   );
 };
