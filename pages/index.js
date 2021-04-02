@@ -12,8 +12,12 @@ import Slide6 from "../components/slide6";
 import Slide7 from "../components/slide7";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [activeSlide, setActiveSlide] = useState(0);
   const [pageTitle, setPageTitle] = useState("Full Stack Web Developer");
+  useEffect(() => {
+    window.addEventListener("load", setLoading(false));
+  }, []);
   useEffect(() => {
     switch (activeSlide) {
       case 0:
@@ -55,24 +59,28 @@ const Home = () => {
 
         <title>Surya Pratap | {pageTitle}</title>
 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+          crossorigin="anonymous"
+        />
 
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-
-        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-
-        <link rel="stylesheet" href="css/animate.css" />
-
-        <link rel="stylesheet" href="css/responsive.css" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
       </Head>
       <div id="video">
-        <div className="preloader">
-          <div className="preloader-bounce">
-            <span></span>
-            <span></span>
-            <span></span>
+        {loading && (
+          <div className="preloader">
+            <div className="preloader-bounce">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-        </div>
+        )}
 
         <header id="header">
           <div className="container-fluid">
@@ -147,7 +155,7 @@ const Home = () => {
         </header>
 
         <video autoPlay muted loop id="myVideo">
-          <source src="images/code-video.mp4" type="video/mp4" />
+          <source src="images/coding-720p.mp4" type="video/mp4" />
         </video>
 
         <ReactFullpage
@@ -206,20 +214,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <script src="js/jquery.js"></script>
-
-      <script src="js/bootstrap.min.js"></script>
-
-      <script src="js/scrolloverflow.js"></script>
-
-      <script src="js/owl.carousel.min.js"></script>
-
-      <script src="js/jquery.inview.min.js"></script>
-
-      <script src="js/form.js"></script>
-
-      <script src="js/custom.js"></script>
     </Fragment>
   );
 };
