@@ -65,6 +65,11 @@ const Home = () => {
           integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
           crossorigin="anonymous"
         />
+
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
       </Head>
       <div id="video">
         {loading && (
@@ -150,7 +155,7 @@ const Home = () => {
         </header>
 
         <video autoPlay muted loop id="myVideo">
-          <source src="images/code-video.mp4" type="video/mp4" />
+          <source src="images/coding-720p.mp4" type="video/mp4" />
         </video>
 
         <ReactFullpage
